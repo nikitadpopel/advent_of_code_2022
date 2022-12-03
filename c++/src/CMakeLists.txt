@@ -10,6 +10,3 @@ target_include_directories(src PUBLIC
 add_executable (App
     Main.cpp
 )
-
-target_link_libraries(App glfw)
-target_link_libraries(App glad)
