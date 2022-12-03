@@ -1,8 +1,6 @@
-def readInput(filename):
-    with open(filename) as file:
-        lines = file.readlines()
-        lines = [line.rstrip() for line in lines]
-    return lines
+import sys
+sys.path.append('../')
+from helper_functions import *
 
 def getScore(hand):
     if hand == 'X':
@@ -58,6 +56,6 @@ def part2(lineList):
     return score
 
 if __name__ == '__main__':
-    lineList = readInput('day2.txt')
+    lineList = readInput('../inputs/day2.txt')
     print(part1(lineList))
     print(part2(lineList))

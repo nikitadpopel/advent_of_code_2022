@@ -1,8 +1,6 @@
-def readInput(filename):
-    with open(filename) as file:
-        lines = file.readlines()
-        lines = [line.rstrip() for line in lines]
-    return lines
+import sys
+sys.path.append('../')
+from helper_functions import *
 
 def getScore(letter):
     alphabet = ' abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -35,6 +33,6 @@ def part2(lineList):
     return score
 
 if __name__ == '__main__':
-    lineList = readInput('day3.txt')
+    lineList = readInput('../inputs/day3.txt')
     print(part1(lineList))
     print(part2(lineList))
