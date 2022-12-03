@@ -1,1 +1,1 @@
-# cmake_glfw_template
+# c++ advent of code
