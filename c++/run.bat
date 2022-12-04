@@ -1,1 +1,1 @@
-.\build\src\Debug\app.exe
+.\build\src\Debug\app.exe %1
