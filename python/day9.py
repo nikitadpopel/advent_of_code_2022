@@ -9,18 +9,36 @@ class Bridge:
         self.ywidth = 1
         self.head = {'x':0,'y':0}
         self.tail = {'x':0,'y':0}
-        self.spaces = {0:{0:'hello', 1:'bye'}}
-    def printSpaces(self):
-        for i in self.spaces:
-            for j in self.spaces[i]:
-                print(self.spaces[i][j])
+        self.spaces = {}
+    def printStuff(self):
+        print(self.head)
+        print(self.tail)
+        print(self.spaces)
+
+
+    def moveHead(self, direction):
+        print('moving head in ' + direction)
+        pass
+
+    def moveTail(self):
+        print('moving tail')
+        pass
+
+    def move(self, line):
+        splitline = line.split(' ')
+        for i in range(int(splitline[1])):
+            self.moveHead(splitline[0])
+            self.moveTail()
+        
+
                 
 
 def part1(lineList):
     bridge = Bridge()
-    bridge.printSpaces()
+    bridge.printStuff()
     for i in lineList:
-        print(i)
+        bridge.move(i)
+        bridge.printStuff()
 
 def part2(lineList):
     pass
