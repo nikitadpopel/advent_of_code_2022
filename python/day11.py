@@ -21,7 +21,7 @@ class Monkey:
     def printmonk(self):
         print(self.items)
 
-    def movemonk(self):
+    def movemonkp1(self):
         moves = []
         for i in self.items:
             curritemnew = None
@@ -39,7 +39,37 @@ class Monkey:
 
                 if self.operationsign == "*":
                     curritemnew = i * int(self.operationconst)
-            curritemnew = int(curritemnew)
+            curritemnew = int(curritemnew/3)
+            move += str(curritemnew) + ' '
+            if curritemnew % self.testdivisor == 0:
+                move += str(self.truecondition)
+            else:
+                move += str(self.falsecondition)
+            moves.append(move)
+        self.items = []
+        
+        return moves
+    
+    
+    def movemonkp2(self):
+        moves = []
+        for i in self.items:
+            curritemnew = None
+            move = ''
+            self.counttimes +=1
+            if self.operationconst == 'old':
+                if self.operationsign == "+":
+                    curritemnew = i + i
+                if self.operationsign == "*":
+                    curritemnew = i * i
+
+            else:
+                if self.operationsign == "+":
+                    curritemnew = i + int(self.operationconst)
+
+                if self.operationsign == "*":
+                    curritemnew = i * int(self.operationconst)
+            curritemnew = int(curritemnew) % 9699690
             move += str(curritemnew) + ' '
             if curritemnew % self.testdivisor == 0:
                 move += str(self.truecondition)
@@ -95,7 +125,7 @@ def part1(lineList):
     monkeys = createMonkeys(lineList)
     for i in range(20):
         for j in monkeys:
-            moves = j.movemonk()
+            moves = j.movemonkp1()
             for k in moves:
                 move = k.split(' ')
                 monkeys[int(move[1])].additem(int(move[0]))
@@ -112,7 +142,7 @@ def part2(lineList):
     monkeys = createMonkeys(lineList)
     for i in range(10000):
         for j in monkeys:
-            moves = j.movemonk()
+            moves = j.movemonkp2()
             for k in moves:
                 move = k.split(' ')
                 monkeys[int(move[1])].additem(int(move[0]))
