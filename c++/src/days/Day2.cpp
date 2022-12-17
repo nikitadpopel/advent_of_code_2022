@@ -71,7 +71,69 @@ int Day2::Part1(std::vector<std::string> hands)
 
 int Day2::Part2(std::vector<std::string> hands)
 {
-	return 0;
+    std::vector<std::string>::iterator iter;
+    int totalscore = 0;
+	for(iter = hands.begin(); iter < hands.end(); iter++ )
+	{   
+        int hand = 0;
+        int comp = 0;
+        
+        if(iter->at(0) == 'A')
+        {
+            comp = 1;
+        }
+        
+        if(iter->at(0) == 'B')
+        {
+            comp = 2;
+        }
+        
+        if(iter->at(0) == 'C')
+        {
+            comp = 3;
+        }
+        
+        if(iter->at(2) == 'X')
+        {
+            if(comp == 1)
+            {
+                hand = 3;
+            }
+            if(comp == 2)
+            {
+                hand = 1;
+            }
+            if(comp == 3)
+            {
+                hand = 2;
+            }
+            totalscore += hand + 0;
+        }
+        
+        if(iter->at(2) == 'Y')
+        {
+            hand = comp;
+            totalscore += hand + 3;
+        }
+        
+        if(iter->at(2) == 'Z')
+        {
+            if(comp == 1)
+            {
+                hand = 2;
+            }
+            if(comp == 2)
+            {
+                hand = 3;
+            }
+            if(comp == 3)
+            {
+                hand = 1;
+            }
+            totalscore += hand + 6;
+        }
+	}
+    return totalscore;
 }
 
 bool Day2::Solve()
