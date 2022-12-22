@@ -44,7 +44,6 @@ bool Day1::Solve()
 	{
 		if(!iter->empty())
 		{
-
 			currelf += stoi(*iter);
 		}
 		else
