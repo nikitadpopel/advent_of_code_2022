@@ -30,9 +30,55 @@ int Day4::Part1(std::vector<std::string> sectionlist)
 		sections = sections.substr(sections.find("-") + 1, sections.length());
 		sec2[1] = stoi(sections.substr(0, sections.find(",")));
 		sections = sections.substr(sections.find(",") + 1, sections.length());
-		std::cout << sec1[0] << " " << sec1[1]<< " "<< sec2[0] << " " << sec2[1]<< std::endl;
-		
 
+		std::vector<int> section1;
+		std::vector<int> section2;
+		int tempmin = 0;
+		int tempmax = 0;
+		if(sec1[0]>sec1[1])
+		{
+			tempmin = sec1[1];
+			tempmax = sec1[0];
+		}
+		else
+		{
+			tempmin = sec1[0];
+			tempmax = sec1[1];
+		}
+		for(int i = tempmin; i <= tempmax; i++)
+		{
+			section1.push_back(i);
+		}
+		
+		if(sec2[0]>sec2[1])
+		{
+			tempmin = sec2[1];
+			tempmax = sec2[0];
+		}
+		else
+		{
+			tempmin = sec2[0];
+			tempmax = sec2[1];
+		}
+		for(int i = tempmin; i <= tempmax; i++)
+		{
+			section2.push_back(i);
+		}
+		
+		std::vector<int>::iterator iter2;
+		bool isfound = false;
+		for(iter2 = section1.begin(); iter2 < section1.end(); iter2++ )
+		{
+			auto result1 = std::find(section2.begin(), section2.end(), *iter2);
+			if(result1 != section2.end())
+			{
+				isfound = true;
+			}
+		}
+		if(isfound)
+		{
+			totalcount += 1;
+		}
 	}
 	return totalcount;
 }
