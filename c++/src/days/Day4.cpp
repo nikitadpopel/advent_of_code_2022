@@ -78,18 +78,21 @@ int Day4::Part1(std::vector<std::string> sectionlist)
 		{
 			totalcount += 1;
 		}
+		if(section1.size() != section2.size())
+		{
 
-		findcount = 0;
-		for(iter2 = section2.begin(); iter2 < section2.end(); iter2++ )
-		{
-			if(std::find(section1.begin(), section1.end(), *iter2) != section1.end())
+			findcount = 0;
+			for(iter2 = section2.begin(); iter2 < section2.end(); iter2++ )
 			{
-				findcount += 1;
+				if(std::find(section1.begin(), section1.end(), *iter2) != section1.end())
+				{
+					findcount += 1;
+				}
 			}
-		}
-		if(findcount == section2.size())
-		{
-			totalcount += 1;
+			if(findcount == section2.size())
+			{
+				totalcount += 1;
+			}
 		}
 	}
 	return totalcount;
