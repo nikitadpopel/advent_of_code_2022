@@ -15,12 +15,21 @@ Day5::Day5()
 
 void Day5::ParseInput()
 {
-
+	int index = 0;
+	auto it = std::find(m_vecInput.begin(), m_vecInput.end(), "");
+	if(it != m_vecInput.end())
+	{
+		index = it - m_vecInput.begin();
+	}
+	std::cout << "Index: " << index << std::endl;
 }
 
 void Day5::PrintCrates()
 {
 	std::cout << "Crates:" <<std::endl;
+
+	
+	std::cout << "----------------------------------------------------" <<std::endl <<std::endl;
 }
 
 int Day5::Part1(std::vector<std::string> moves)
