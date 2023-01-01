@@ -21,7 +21,9 @@ void Day5::ParseInput()
 	{
 		index = it - m_vecInput.begin();
 	}
+
 	std::cout << "Index: " << index << std::endl;
+	std::cout << "test: "<< m_vecInput[index - 1] << std::endl;
 }
 
 void Day5::PrintCrates()
@@ -34,21 +36,21 @@ void Day5::PrintCrates()
 
 int Day5::Part1(std::vector<std::string> moves)
 {
-    std::vector<std::string>::iterator iter;
-	for(iter = moves.begin(); iter < moves.end(); iter++ )
-	{   
-		std::cout << *iter << std::endl;
-	}
+    // std::vector<std::string>::iterator iter;
+	// for(iter = moves.begin(); iter < moves.end(); iter++ )
+	// {   
+	// 	std::cout << *iter << std::endl;
+	// }
 	return 0;
 }
 
 int Day5::Part2 (std::vector<std::string> moves)
 {
-    std::vector<std::string>::iterator iter;
-	for(iter = moves.begin(); iter < moves.end(); iter++ )
-	{   
-		std::cout << *iter << std::endl;
-	}
+    // std::vector<std::string>::iterator iter;
+	// for(iter = moves.begin(); iter < moves.end(); iter++ )
+	// {   
+	// 	std::cout << *iter << std::endl;
+	// }
 	return 0;
 }
 
